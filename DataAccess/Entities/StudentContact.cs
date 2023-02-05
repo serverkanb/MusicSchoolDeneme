@@ -17,5 +17,11 @@ namespace DataAccess.Entities
         [Required]
         [StringLength(1000)]
         public string Address { get; set; }
+
+
+        public int CountryId { get; set; }
+        public Country Country { get; set; }
+        public int CityId { get; set; }
+        public City City { get; set; }
     }
 }

@@ -57,6 +57,9 @@ builder.Services.AddScoped<LessonRepoBase, LessonRepo>();
 builder.Services.AddScoped<StudentRepoBase, StudentRepo>();
 builder.Services.AddScoped<TeacherRepoBase, TeacherRepo>();
 builder.Services.AddScoped<InstrumentRepoBase, InstrumentRepo>();
+builder.Services.AddScoped<CityRepoBase, CityRepo>();
+builder.Services.AddScoped<CountryRepoBase, CountryRepo>();
+
 builder.Services.AddScoped<UserRepoBase, UserRepo>();
 
 
@@ -70,6 +73,8 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IInstrumentService, InstrumentService>();
 builder.Services.AddScoped<ILessonService, LessonService>();
 builder.Services.AddScoped<IClassroomService, ClassroomService>();
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
 
 
 

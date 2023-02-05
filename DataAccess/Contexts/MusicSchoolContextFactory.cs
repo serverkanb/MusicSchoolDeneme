@@ -14,7 +14,7 @@ namespace DataAccess.Contexts
         public MusicSchoolContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<MusicSchoolContext>();
-            optionsBuilder.UseSqlServer("server=.\\SQLEXPRESS;database=MusicSchoolDB;user id=sa;password=sa;multipleactiveresultsets=true;trustservercertificate=true;");
+            optionsBuilder.UseSqlServer("server=LAPTOP-1IHFPICF;database=musicschool-2;trusted_connection=true;multipleactiveresultsets=true;trustservercertificate=true;");
             // önce veritabanımızın (development veritabanı kullanılması daha uygundur) connection string'ini içeren bir obje oluşturuyoruz
 
             return new MusicSchoolContext(optionsBuilder.Options); // daha sonra yukarıda oluşturduğumuz obje üzerinden ETradeContext tipinde bir obje dönüyoruz

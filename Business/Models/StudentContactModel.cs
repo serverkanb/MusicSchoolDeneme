@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,5 +20,10 @@ namespace Business.Models
 
         //[DataType("email")]
         public string Address { get; set; }
+
+        public int CountryId { get; set; }
+        public Country Country { get; set; }
+        public int CityId { get; set; }
+        public City City { get; set; }
     }
 }

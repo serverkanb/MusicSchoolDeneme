@@ -73,6 +73,24 @@
 				</div>
 			</div>
             <div class="row mb-3">
+                <label asp-for="StudentContact.CountryId" class="col-2 col-form-label"></label>
+                <div class="col-5">
+                    <select asp-for="StudentContact.CountryId" class="form-select" asp-items="ViewBag.Countries" id="countries">
+                        <option value="">-- Select Country --</option>
+                    </select>
+                    <span asp-validation-for="StudentContact.CountryId" class="text-danger countriesmessage"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="StudentContact.CityId" class="col-2 col-form-label"></label>
+                <div class="col-5">
+                    <select asp-for="StudentContact.CityId" class="form-select cities" asp-items="ViewBag.Cities">
+                        <option value="">-- Select City --</option>
+                    </select>
+                    <span asp-validation-for="StudentContact.CityId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-3">
                 <label asp-for="StudentContact.Address" class="col-2 col-form-label"></label>
                 <div class="col-5">
                     <input asp-for="StudentContact.Address" class="form-control" type="text" />
@@ -118,6 +136,29 @@
 
         });
 	</script>
+    <script>
+        $(function () {
+            $("#countries").change(function () {
+                var selectedCountryId = $("#countries").val();
+                $(".cities").empty();
+                if (selectedCountryId == "") {
+                    $(".countriesmessage").text("Please select a country...");
+                    $(".cities").append('<option value="">-- Select Country --</option>');
+                } else {
+                   
+                    $.getJSON("/Cities/Index",
+                        { countryId: selectedCountryId }, 
+                        function (cities) { 
+                            $(".cities").append('<option value="">-- Select City --</option>');
+                            for (const city of cities) {
+                                $(".cities").append('<option value="' + city.id + '">' + city.name + '</option>');
+                            }
+                        }
+                    );
+                }
+            });
+        });
+    </script>
 }
 
 

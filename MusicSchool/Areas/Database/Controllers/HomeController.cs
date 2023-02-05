@@ -224,6 +224,68 @@ namespace MusicSchool.Areas.Database.Controllers
 
 
             });
+
+            _db.Countries.Add(new Country()
+            {
+                Name = "United States",
+                Cities = new List<City>()
+                {
+                    new City()
+                    {
+                        Name = "Los Angeles"
+                    },
+                    new City()
+                    {
+                        Name = "New York"
+                    }
+                }
+            });
+            _db.Countries.Add(new Country()
+            {
+                Name = "Germany",
+                Cities = new List<City>()
+                {
+                    new City()
+                    {
+                        Name = "Berlin"
+                    },
+                    new City()
+                    {
+                        Name = "Münich"
+                    },
+                    new City()
+                    {
+                        Name="Köln"
+                    }
+                }
+            });
+            _db.Countries.Add(new Country()
+            {
+                Name = "Turkey",
+                Cities = new List<City>()
+                {
+                    new City()
+                    {
+                        Name = "Ankara"
+                    },
+                    new City()
+                    {
+                        Name = "Istanbul"
+                    },
+                    new City()
+                    {
+                        Name = "Izmir"
+                    },
+                    new City()
+                    {
+                        Name="Samsun"
+                    },
+                    new City()
+                    {
+                        Name="Kayseri"
+                    }
+                }
+            });
             _db.Roles.Add(new Role()
             {
                 Name = "User",

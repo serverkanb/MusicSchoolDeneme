@@ -18,6 +18,8 @@ namespace DataAccess.Contexts
 		public DbSet <Instrument> Instruments { get; set; } 
 		public DbSet <User> Users { get; set; }
 		public DbSet <Role> Roles { get; set; }
+		public DbSet <Country> Countries { get; set; }
+		public DbSet <City> Cities { get; set; }
 		public DbSet<TeacherContact> TeacherContacts { get; set; }
 		public DbSet<StudentContact>StudentContacts { get; set; }
 
